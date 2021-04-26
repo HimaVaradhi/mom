@@ -26,7 +26,7 @@ public class MyApplication extends Application {
         cookieStore = new PersistentHttpCookieStore(getApplicationContext());
          cookieManager = new CookieManager(cookieStore, CookiePolicy.ACCEPT_ALL);
         CookieHandler.setDefault(cookieManager);
-
+//testing
 
     }
 
