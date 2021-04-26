@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/borderround_white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resend OTP"
+        android:textColor="@color/green"
+        android:layout_gravity="right"
+        android:layout_margin="@dimen/dp5"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <in.aabhasjindal.otptextview.OtpTextView
+            android:id="@+id/otp_view_email"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp40"
+            android:layout_margin="@dimen/dp10"
+            android:textColor="#000"
+            app:bar_active_color="@color/colorYellow"
+            app:bar_enabled="true"
+            app:bar_height="2dp"
+            app:bar_inactive_color="@color/textColorDark"
+            app:box_margin="@dimen/dp10"
+            app:height="30dp"
+            app:length="4"
+            app:otp_box_background="@drawable/border"
+            app:otp_text_size="14sp"
+            app:width="30dp" />
+
+        <ImageButton
+            android:id="@+id/image_button_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_round_shape_green1"
+            app:srcCompat="@drawable/ic_arrow_forward_white" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/dp5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp30"
+            android:background="@drawable/account_background_shape"
+            android:text="Add Variants"
+            android:gravity="center"
+            android:textColor="@color/white"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp10">
+
+            <EditText
+                android:id="@+id/et_stock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:background="@drawable/bg_edit_setproduct"
+                android:hint="Product Stock*"
+                android:textSize="@dimen/textsize_14sp" />
+
+            <EditText
+                android:id="@+id/et_quality"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_setproduct"
+                android:hint="Product Quantity*"
+                android:textSize="@dimen/textsize_14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_weight"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_setproduct"
+                android:hint="Product Weight Price*"
+                android:textSize="@dimen/textsize_14sp" />
+
+            <EditText
+                android:id="@+id/et_price"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_setproduct"
+                android:hint="Product Piece Price"
+                android:textSize="@dimen/textsize_14sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_offer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_setproduct"
+                android:hint="Discount Offer"
+                android:textSize="@dimen/textsize_14sp" />
+
+            <EditText
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_setproduct"
+                android:drawableRight="@drawable/date_picker"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="Manfacture date*"
+                android:textSize="@dimen/textsize_14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_hsn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_setproduct"
+                android:hint="Product HSN"
+                android:textSize="@dimen/textsize_14sp" />
+
+            <EditText
+                android:id="@+id/et_tax"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_setproduct"
+                android:hint="Product Tax"
+                android:textSize="@dimen/textsize_14sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_upc"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_setproduct"
+                android:hint="Product EAN Or UPC"
+                android:textSize="@dimen/textsize_14sp" />
+
+            <Spinner
+                android:id="@+id/sp_containmentType"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_set_spinner"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/sp_productCertificate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_set_spinner"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown" />
+
+
+            <Spinner
+                android:id="@+id/sp_productStatus"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_set_spinner"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown" />
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_preservation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp150"
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@drawable/bg_edit_setproduct"
+            android:gravity="top"
+            android:hint="Preservation Process"
+            android:textSize="@dimen/textsize_14sp" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp35"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp15"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@color/green"
+            android:text="Add"
+            android:id="@+id/addproduct"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+    <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/dimension_40dp"
+            android:orientation="vertical">
+
+
+
+
+
+        <EditText
+            android:id="@+id/et_offer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimension_05dp"
+            android:background="@drawable/bg_edit_setproduct"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimension_10dp"
+            android:textSize="@dimen/textsize_14sp"
+            android:hint="Percentage Offer"
+            />
+
+        <EditText
+            android:id="@+id/et_product_process"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimension_05dp"
+            android:background="@drawable/bg_edit_setproduct"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimension_10dp"
+            android:textSize="@dimen/textsize_14sp"
+            android:hint="Preservation Process"
+             />
+
+        <Spinner
+            android:id="@+id/sp_containmentType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dropDownWidth="match_parent"
+            android:layout_margin="@dimen/dimension_05dp"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/bg_set_spinner" />
+
+        <EditText
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimension_05dp"
+            android:background="@drawable/bg_edit_setproduct"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimension_10dp"
+            android:textSize="@dimen/textsize_14sp"
+            android:drawableRight="@drawable/date_picker"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="Manfacture date"
+            />
+        <EditText
+            android:id="@+id/et_hsn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimension_05dp"
+            android:background="@drawable/bg_edit_setproduct"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimension_10dp"
+            android:textSize="@dimen/textsize_14sp"
+            android:hint="Product HSN"
+            />
+        <EditText
+            android:id="@+id/et_tax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimension_05dp"
+            android:background="@drawable/bg_edit_setproduct"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimension_10dp"
+            android:textSize="@dimen/textsize_14sp"
+            android:hint="Product Tax"
+            />
+        <EditText
+            android:id="@+id/et_upc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimension_05dp"
+            android:background="@drawable/bg_edit_setproduct"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimension_10dp"
+            android:textSize="@dimen/textsize_14sp"
+            android:hint="Product Earn Or UPC"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimension_05dp"
+            android:text="Ok"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_btn_rectngle"
+            android:id="@+id/btn_ok"/>
+
+        </LinearLayout>
+    -->
+</ScrollView>

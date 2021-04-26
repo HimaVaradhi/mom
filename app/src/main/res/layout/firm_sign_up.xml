@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp50"
+            android:gravity="center"
+            android:text="Please select the suitable description \n of you"
+            android:textSize="@dimen/sp20" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_cooking"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp30"
+                android:background="@drawable/check_box_drawable"
+                android:button="@null" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Love cooking but not selling food"
+                android:textColor="@color/textColorDark"
+                android:textSize="@dimen/sp14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_selling"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp30"
+                android:background="@drawable/check_box_drawable"
+                android:button="@null" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selling Homemade foods"
+                android:textColor="@color/textColorDark"
+
+                android:textSize="@dimen/sp14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_baker"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp30"
+                android:background="@drawable/check_box_drawable"
+                android:button="@null" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/baker"
+                android:textColor="@color/textColorDark"
+
+                android:textSize="@dimen/sp14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_mange"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp30"
+                android:background="@drawable/check_box_drawable"
+                android:button="@null" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manage a Commercial kitchen"
+                android:textColor="@color/textColorDark"
+
+                android:textSize="@dimen/sp14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_mange_cafe"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp30"
+                android:background="@drawable/check_box_drawable"
+                android:button="@null" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manage a Cafe / Bakery / Restaurent"
+                android:textColor="@color/textColorDark"
+
+                android:textSize="@dimen/sp14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_food"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp30"
+                android:background="@drawable/check_box_drawable"
+                android:button="@null" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food Vendor"
+                android:textColor="@color/textColorDark"
+
+                android:textSize="@dimen/sp14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_reseller"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp30"
+                android:background="@drawable/check_box_drawable"
+                android:button="@null" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Re-Seller of food products"
+                android:textColor="@color/textColorDark"
+
+                android:textSize="@dimen/sp14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_others"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp30"
+                android:background="@drawable/check_box_drawable"
+                android:button="@null" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Others"
+                android:textColor="@color/textColorDark"
+
+                android:textSize="@dimen/sp14" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edit_comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp20"
+            android:hint="Enter here"
+            android:paddingLeft="@dimen/dp10"
+            android:textColor="@color/black"
+            android:visibility="gone" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp10"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp10"
+                android:layout_weight="0.5"
+                android:paddingLeft="@dimen/dp10"
+                android:text="Running a Business ?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16" />
+
+            <LinearLayout
+                android:layout_width="@dimen/dp0"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/spinner_background_4"
+                    android:entries="@array/business"
+                    android:paddingLeft="@dimen/dp10"
+                    android:theme="@style/mySpinnerItemStyle" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp10"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp10"
+                android:layout_weight="0.5"
+                android:paddingLeft="@dimen/dp10"
+                android:text="Registered a Business ?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16" />
+
+            <LinearLayout
+                android:layout_width="@dimen/dp0"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:layout_weight="0.5">
+
+                <TextView
+                    android:id="@+id/txt_yes"
+                    android:layout_width="@dimen/dp70"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_border"
+                    android:gravity="center"
+                    android:text="Yes"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txt_no"
+                    android:layout_width="@dimen/dp70"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/three_side_border"
+                    android:gravity="center"
+                    android:text="No"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_business_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+            android:background="@drawable/border_white_2"
+            android:ellipsize="end"
+            android:hint="Business Name*"
+            android:maxLines="2"
+            android:paddingLeft="@dimen/dp10"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/ll_register_no_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp10"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/et_reg_no"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_weight="0.5"
+                android:background="@drawable/border_white_2"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:hint="Registration no*"
+                android:maxLines="2"
+                android:padding="@dimen/dp10"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+            <LinearLayout
+                android:id="@+id/ll_register_no"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp5"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_weight="0.3"
+                android:background="@drawable/borderrectangle_green"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:rotation="90"
+                    app:srcCompat="@drawable/ic_attach_file"
+                    app:tint="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/image_pan"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp5"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_weight="0.4"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/image_pan_1"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/dp50"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_attach_file" />
+
+                <ImageView
+                    android:id="@+id/image_pan_2"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/dp50"
+                    android:layout_marginLeft="@dimen/dp5"
+                    android:background="@drawable/ic_add_a_photo_black_24dp"
+                    android:scaleType="fitXY" />
+
+                <LinearLayout
+                    android:id="@+id/linear_done_pan"
+                    android:layout_width="@dimen/dp50"
+                    android:layout_height="@dimen/dp50"
+                    android:layout_marginLeft="@dimen/dp5"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/border_blue"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/img_done_pan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/upload"
+                        app:tint="@color/blueColor" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp10"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp10"
+                android:layout_weight="0.5"
+                android:paddingLeft="@dimen/dp10"
+                android:text="Available in any other Platform"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16" />
+
+            <LinearLayout
+                android:layout_width="@dimen/dp0"
+                android:layout_height="match_parent"
+                android:gravity="right|center"
+                android:layout_weight="0.5">
+
+                <TextView
+                    android:id="@+id/txt_business_yes"
+                    android:layout_width="@dimen/dp70"
+                    android:layout_height="@dimen/dp40"
+                    android:background="@drawable/background_border"
+                    android:gravity="center"
+                    android:text="Yes"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txt_business_no"
+                    android:layout_width="@dimen/dp70"
+                    android:layout_height="@dimen/dp40"
+                    android:background="@drawable/three_side_border"
+                    android:gravity="center"
+                    android:text="No"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_platform_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp10"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp10"
+                android:layout_weight="0.5"
+                android:paddingLeft="@dimen/dp10"
+                android:text="Please select a Platform"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16" />
+
+            <LinearLayout
+                android:layout_width="@dimen/dp0"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/spinner_background_4"
+                    android:entries="@array/platform"
+                    android:paddingLeft="@dimen/dp10"
+                    android:theme="@style/mySpinnerItemStyle" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_platform_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+            android:background="@drawable/border_white_2"
+            android:ellipsize="end"
+            android:hint="Enter Platform Name"
+            android:maxLines="2"
+            android:paddingLeft="@dimen/dp10"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+
+        <EditText
+            android:id="@+id/et_profile_link"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+            android:background="@drawable/border_white_2"
+            android:ellipsize="end"
+            android:hint="Profile link"
+            android:maxLines="2"
+            android:paddingLeft="@dimen/dp10"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp10"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:ellipsize="end"
+                    android:gravity="left|center"
+                    android:maxLines="2"
+                    android:paddingLeft="@dimen/dp10"
+                    android:text="Ratings*"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp5"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RatingBar
+                        android:id="@+id/rating_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:theme="@style/RatingBar" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txt_rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:background="@drawable/border_green_1"
+                    android:gravity="center"
+                    android:text="0.0" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp30"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp30"
+            android:background="@drawable/border_green_1"
+            android:text="Add Another" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp10"
+            android:id="@+id/Confirmbtn"
+            android:background="@drawable/borderrectangle"
+            android:gravity="center"
+            android:text="Confirm &amp; Submit"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</ScrollView>

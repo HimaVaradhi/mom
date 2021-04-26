@@ -1,0 +1,32 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item>
+
+        <layer-list android:layout_height="wrap_content">
+
+            <item>
+                <shape
+                    android:shape="rectangle">
+
+                    <corners android:radius="45dp"/>
+
+                    <solid
+                        android:color="#4CAF50"/>
+
+                    <size
+                        android:width="60dp"
+                        android:height="30dp"/>
+                </shape>
+            </item>
+
+            <item android:drawable="@drawable/ic_arrow_drop_down_white"
+                android:gravity="center_vertical|right"
+                android:right="@dimen/dp10"
+                />
+
+
+        </layer-list>
+
+    </item>
+
+</selector>

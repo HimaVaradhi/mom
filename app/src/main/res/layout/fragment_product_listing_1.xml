@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundColor2"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp5"
+                android:text="Listing information"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="Seller SKU ID*"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edt_sku_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/btn_round_shape_green"
+                android:paddingLeft="@dimen/dp15"
+                android:textSize="@dimen/sp14"
+                android:hint="0"
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp20"
+                    android:text="Listing Status" />
+
+                <Spinner
+                    style="@style/mySpinnerItemStyle2"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="40dp"
+                    android:layout_margin="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/spinner_background_5"
+                    android:entries="@array/lisitng" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp5"
+                android:text="Price Details"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="Market Retail Price (MRP)*"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/btn_round_shape_green"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:text="\u20B9" />
+
+                <EditText
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    android:hint="0.00"
+                    android:textSize="@dimen/sp14" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/dp2"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:layout_marginBottom="@dimen/dp5"
+                        android:background="@color/skyblue" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="INR"
+                        android:textColor="@color/skyblue" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp20"
+                android:text="Your Selling Price (SP)*"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp10"
+                android:background="@drawable/btn_round_shape_green"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:text="\u20B9" />
+
+                <EditText
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    android:hint="0.00"
+                    android:textSize="@dimen/sp14" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/dp2"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:layout_marginBottom="@dimen/dp5"
+                        android:background="@color/skyblue" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="INR"
+                        android:textColor="@color/skyblue" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <!--dzgfaeraaaaaagg-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp5"
+                android:text="Inventory Stock Details"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Fulfiled by" />
+
+                <Spinner
+                    style="@style/mySpinnerItemStyle2"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/spinner_background_5"
+                    android:entries="@array/fulfilled" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Procurement Type" />
+
+                <Spinner
+                    style="@style/mySpinnerItemStyle2"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/spinner_background_5"
+                    android:entries="@array/procurment" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Procurement SLA" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/btn_round_shape_green"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:inputType="phone"
+                        android:hint="0" />
+
+                    <TextView
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/btn_round_shape_one_side"
+                        android:gravity="center"
+                        android:text="days"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Stocks" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/btn_round_shape_green">
+
+                    <EditText
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:hint="0"
+                        android:inputType="phone"/>
+
+                    <Spinner
+                        style="@style/mySpinnerItemStyle3"
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:background="@drawable/spinner_background_6"
+                        android:entries="@array/stocks" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Stocks avaliable for buyers" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/btn_round_shape_green">
+
+                    <EditText
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:hint="0"
+                        android:inputType="phone"/>
+
+                    <Spinner
+                        style="@style/mySpinnerItemStyle3"
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:background="@drawable/spinner_background_6"
+                        android:entries="@array/stocks" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp5"
+                android:text="Catagory Details"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Sub Category" />
+
+                <Spinner
+                    style="@style/mySpinnerItemStyle2"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/spinner_background_5"
+                    android:entries="@array/sub_catagory" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Consumption Type" />
+
+                <Spinner
+                    style="@style/mySpinnerItemStyle2"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/spinner_background_5"
+                    android:entries="@array/consumpation_type" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp5"
+                android:text="Shipping Details"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Shimpment Provider" />
+
+                <Spinner
+                    style="@style/mySpinnerItemStyle2"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/spinner_background_5"
+                    android:entries="@array/fulfilled" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp5"
+                android:text="Price Details"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Local Delivery Charges*" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/btn_round_shape_green"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:hint="0"
+                        android:textSize="@dimen/sp14"
+                        android:inputType="numberDecimal"/>
+
+                    <TextView
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/btn_round_shape_one_side"
+                        android:gravity="center"
+                        android:text="INR"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Zone Delivery Charges*" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/btn_round_shape_green"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:hint="0"
+                        android:textSize="@dimen/sp14"
+                        android:inputType="numberDecimal"/>
+
+                    <TextView
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/btn_round_shape_one_side"
+                        android:gravity="center"
+                        android:text="INR"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="National Delivery Charges*" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/btn_round_shape_green"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:hint="0"
+                        android:textSize="@dimen/sp14"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/btn_round_shape_one_side"
+                        android:gravity="center"
+                        android:text="INR"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp5"
+                android:text="Product Volume Details"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Weight*" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/btn_round_shape_green"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:hint="0"
+                        android:textSize="@dimen/sp14"
+                        android:inputType="numberDecimal"/>
+
+                    <TextView
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/btn_round_shape_one_side"
+                        android:gravity="center"
+                        android:text="INR"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Breadth*" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/btn_round_shape_green"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:textSize="@dimen/sp14"
+                        android:hint="0"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/btn_round_shape_one_side"
+                        android:gravity="center"
+                        android:text="INR"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Height*" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/btn_round_shape_green"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:hint="0"
+                        android:textSize="@dimen/sp14"
+                        android:inputType="numberDecimal"/>
+
+                    <TextView
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/btn_round_shape_one_side"
+                        android:gravity="center"
+                        android:text="INR"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp5"
+                android:text="Tax information"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="HSN*"
+                android:textSize="14sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/btn_round_shape_green"
+                android:paddingLeft="@dimen/dp15"
+                android:hint="0"
+                android:textSize="@dimen/sp14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="Luxury Cess*"
+                android:textSize="14sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/btn_round_shape_green"
+                android:paddingLeft="@dimen/dp15"
+                android:hint="0"
+                android:textSize="@dimen/sp14" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp20"
+                    android:text="Tax Code" />
+
+                <Spinner
+                    style="@style/mySpinnerItemStyle2"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/spinner_background_5"
+                    android:entries="@array/gst" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

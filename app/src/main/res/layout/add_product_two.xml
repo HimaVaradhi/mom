@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/dp5">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/dp5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Filter"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimension_10dp"
+            android:background="@drawable/bg_itemview1"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/sp_maxsh"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_set_spinner"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown"
+                />
+
+            <Spinner
+                android:id="@+id/sp_byorganic"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_set_spinner"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown"
+               />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimension_10dp"
+            android:background="@drawable/bg_itemview1"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/sp_country"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_set_spinner"
+                android:dropDownWidth="match_parent"
+                android:entries="@array/country"
+                android:spinnerMode="dropdown"
+                />
+
+
+            <Spinner
+                android:id="@+id/sp_ratting"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_set_spinner"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown"
+               />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimension_10dp"
+            android:background="@drawable/bg_itemview1"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/manufacture_date"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_setproduct"
+                android:drawableRight="@drawable/date_picker"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="Manufacture Date"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_14sp" />
+
+            <Spinner
+                android:id="@+id/sp_organic"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_set_spinner"
+                android:dropDownWidth="match_parent"
+
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/regional_speciality"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:layout_marginTop="@dimen/dimension_10dp"
+            android:background="@drawable/bg_edit_setproduct"
+            android:hint="Regional Speciality"
+            android:inputType="textMultiLine"
+            android:maxLines="2"
+            android:paddingLeft="@dimen/dimension_10dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimension_10dp"
+            android:background="@drawable/bg_itemview1"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/sp_preference"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_set_spinner"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown"
+                />
+
+
+            <Spinner
+                android:id="@+id/sp_food_type"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_set_spinner"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown" />
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edit_taste"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp5"
+            android:background="@drawable/bg_edit_setproduct"
+            android:ellipsize="end"
+            android:hint="Taste"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_14sp" />
+
+        <EditText
+            android:id="@+id/franchise"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:layout_marginTop="@dimen/dimension_10dp"
+            android:background="@drawable/bg_edit_setproduct"
+            android:hint="Franchise"
+            android:maxLines="2"
+            android:paddingLeft="@dimen/dimension_10dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_14sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimension_16dp"
+            android:text="Nutritional Values"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_16sp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimension_10dp"
+            android:background="@drawable/bg_itemview1"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/sp_energy"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                android:hint="Energy(cal)"
+                android:textSize="@dimen/sp14"
+                android:background="@drawable/bg_edit_setproduct"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown" />
+
+            <EditText
+                android:id="@+id/sp_protin"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp5"
+                android:layout_weight="1"
+                android:textSize="@dimen/sp14"
+                android:background="@drawable/bg_edit_setproduct"
+                android:hint="Protein(g)"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimension_10dp"
+            android:background="@drawable/bg_itemview1"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/sp_fat"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                android:hint="Carbohydrate(g)"
+                android:textSize="@dimen/sp14"
+                android:background="@drawable/bg_edit_setproduct"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown" />
+
+            <EditText
+                android:id="@+id/sp_carbo"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp5"
+                android:layout_weight="1"
+                android:hint="Fat(g)"
+                android:textSize="@dimen/sp14"
+                android:background="@drawable/bg_edit_setproduct"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimension_10dp"
+            android:background="@drawable/bg_itemview1"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/sp_fiber"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                android:hint="Fiber"
+                android:textSize="@dimen/sp14"
+                android:background="@drawable/bg_edit_setproduct"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown" />
+
+            <EditText
+                android:id="@+id/sp_sugar"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp5"
+                android:layout_weight="1"
+                android:hint="Sugar(g)"
+                android:textSize="@dimen/sp14"
+                android:background="@drawable/bg_edit_setproduct"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimension_16dp"
+            android:text="Ingredients"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_16sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:layout_marginTop="@dimen/dimension_10dp"
+            android:background="@drawable/bg_edit_setproduct"
+            android:hint="Base Ingredients"
+            android:inputType="textMultiLine"
+            android:maxLines="2"
+            android:id="@+id/edt_basicin"
+            android:paddingLeft="@dimen/dimension_10dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_14sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:layout_marginTop="@dimen/dimension_10dp"
+            android:background="@drawable/bg_edit_setproduct"
+            android:hint="Ingredients"
+            android:id="@+id/edt_ingredents"
+            android:inputType="textMultiLine"
+            android:maxLines="2"
+            android:paddingLeft="@dimen/dimension_10dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_14sp" />
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

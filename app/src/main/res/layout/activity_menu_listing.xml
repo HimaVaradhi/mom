@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="@dimen/dp10"
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp5"
+        android:layout_marginRight="@dimen/dp5"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginBottom="@dimen/dp5"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <TextView
+            android:layout_width="@dimen/dp0"
+            android:layout_height="@dimen/dp30"
+            android:layout_weight="1"
+            android:background="@drawable/button_shapeblue"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="My Categories"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12" />
+
+        <TextView
+            android:id="@+id/txt_active"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="@dimen/dp30"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_weight="1"
+            android:background="@drawable/button_shapenew"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Active"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12" />
+
+        <TextView
+            android:id="@+id/txt_deactive"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="@dimen/dp30"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_weight="1"
+            android:background="@drawable/button_shape_disabled"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="De-Active"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12" />
+
+        <TextView
+            android:id="@+id/txt_my_products"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="@dimen/dp30"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_weight="1"
+            android:background="@drawable/button_shapelgreen"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="My Products"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp10"
+        android:background="@drawable/edit_border"
+        android:drawableRight="@drawable/qr_code"
+        android:hint="Scan Barcode or Search item"
+        android:paddingLeft="@dimen/dp15"
+        android:paddingTop="@dimen/dp5"
+        android:paddingRight="@dimen/dp5"
+        android:paddingBottom="@dimen/dp5"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="@dimen/sp12" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp10"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="@dimen/dp0"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp10"
+                android:text="Please select your Exclusive Menu category"
+                android:textColor="@color/textcolor"
+                android:textSize="@dimen/sp12" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/dp0"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/spinner_menu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/spinner_background_7"
+                android:entries="@array/menu_catagory" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp10" />
+
+</LinearLayout>

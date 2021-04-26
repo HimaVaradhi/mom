@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".screens.Login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:focusableInTouchMode="true"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp0"
+            android:layout_weight="0.3"
+            android:background="@drawable/ic_background_a"
+            android:gravity="center"
+            android:focusable="true"
+            android:weightSum="1">
+
+         <!--   <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/logo" />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp0"
+            android:layout_weight="0.7"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <!--    <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="-350dp"
+                    android:src="@drawable/half_circle" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp120"
+                    android:layout_height="@dimen/dp150"
+                    android:layout_gravity="end"
+                    android:src="@drawable/ellipse" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp150"
+                    android:layout_height="@dimen/dp150"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="-50dp"
+                    android:layout_marginBottom="-50dp"
+                    android:src="@drawable/ellipse" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                  <!--  <ImageView
+                        android:layout_width="@dimen/dp250"
+                        android:layout_height="@dimen/dp150"
+                        android:layout_gravity="center"
+                        android:src="@drawable/mom_new" />-->
+
+                    <include layout="@layout/login_card" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_resend_otp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Didn't receive the OTP?"
+                            android:textColor="@color/textcolor"
+                            android:textSize="@dimen/sp14" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp5"
+                            android:text="Resend OTP"
+                            android:textColor="@color/colorYellow"
+                            android:textSize="@dimen/sp14"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/dp10"
+                        android:layout_marginTop="@dimen/dp5">
+
+                        <TextView
+                            android:id="@+id/tvForgotPassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp10"
+                            android:text="Forgot Password?"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp14" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/dp10"
+                        android:layout_marginTop="@dimen/dp5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp10"
+                            android:text="Register with us"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp16" />
+
+                        <TextView
+                            android:id="@+id/btn_proceed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Apply now"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:textColor="@color/redColor"
+                            android:textSize="@dimen/sp16" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp10">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center|bottom"
+                            android:textColor="@color/textcolor"
+                            android:layout_marginBottom="@dimen/dp20"
+                            android:layout_alignParentBottom="true"
+                            android:layout_gravity="center"
+                            android:text="@string/terms_of_service"
+                            android:textSize="@dimen/sp12"/>
+                    </RelativeLayout>
+
+<!--
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:gravity="center"
+                        android:visibility="visible"
+                        android:orientation="horizontal">
+
+
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="80dp"
+                            android:layout_height="@dimen/dp40"
+                            android:layout_margin="@dimen/dp10"
+                            android:visibility="gone"
+                            android:background="@drawable/btn_background_blue"
+                            android:text="MuM"
+                            android:textColor="@color/white" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="@dimen/dp80"
+                            android:layout_height="@dimen/dp40"
+                            android:layout_margin="@dimen/dp10"
+                            android:visibility="gone"
+                            android:layout_marginLeft="@dimen/dp5"
+                            android:background="@drawable/btn_background_white"
+                            android:text="Farm"
+                            android:textColor="@color/design_default_color_primary_variant" />
+
+                    </LinearLayout>
+-->
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/dp5">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimension_200dp"
+        android:layout_marginTop="@dimen/dimension_20dp"
+
+        >
+        <TextView
+            android:id="@+id/add_varients_images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textsize_14sp"
+            android:textColor="@color/white"
+            android:padding="@dimen/dimension_05dp"
+            android:background="@drawable/bg_btn_rectngle"
+            android:layout_alignParentRight="true"
+            android:text="Add Images"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_images"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginTop="@dimen/dimension_10dp"
+            android:layout_alignParentRight="@dimen/dimension_20dp"
+            android:background="@drawable/bg_itemview1"
+            android:layout_below="@id/add_varients_images"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

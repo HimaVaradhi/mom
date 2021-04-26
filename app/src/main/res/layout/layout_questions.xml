@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/dp5"
+    android:background="@drawable/card_shae"
+    android:orientation="vertical"
+    android:padding="@dimen/dp10">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:text="When will I receive Payouts ?"
+        android:textColor="@color/skyblue"
+        android:textSize="@dimen/sp16"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/sp14"
+        android:text="All food orders related payouts will be made post 10 days of delivery of the order or till the Replacement Policy is over."/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp15"
+        android:text="AmruthaShala Rate Cards"
+        android:textColor="@color/skyblue"
+        android:textSize="@dimen/sp16"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/sp14"
+        android:text="Click here to know the marketplace fee structure of your orders &amp; services."/>
+
+</LinearLayout>

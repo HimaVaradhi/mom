@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundColor2"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp5"
+                android:text="Product information"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="Product Name/Model Name/Title"
+                android:textSize="14sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/borderrectanglegreen"
+                android:paddingLeft="@dimen/dp35"
+                android:hint="0"
+                android:textSize="@dimen/sp14" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Each Product Weight*" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/btn_round_shape_green"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.6"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:hint="0"
+                        android:textSize="@dimen/sp14"/>
+
+                    <Spinner
+                        style="@style/mySpinnerItemStyle3"
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:background="@drawable/spinner_background_6"
+                        android:entries="@array/grams" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--aSdAFSasdfASFD-->
+
+            <!--asfasefasdf-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="Base Ingredients*"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edt_sku_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/btn_round_shape_green"
+                android:paddingLeft="@dimen/dp15"
+                android:hint="Search"
+                android:textSize="@dimen/sp14" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp200"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/borderrectanglegreen" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Type" />
+
+                <Spinner
+                    style="@style/mySpinnerItemStyle2"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/spinner_background_5"
+                    android:entries="@array/fulfilled" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="Ingredients*"
+                android:textSize="14sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/btn_round_shape_green"
+                android:paddingLeft="@dimen/dp15"
+                android:hint="Search"
+                android:textSize="@dimen/sp14" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp200"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/borderrectanglegreen" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Container Type" />
+
+                <Spinner
+                    style="@style/mySpinnerItemStyle2"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/spinner_background_5"
+                    android:entries="@array/container_type" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Food Preference*" />
+
+                <Spinner
+                    style="@style/mySpinnerItemStyle2"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/spinner_background_5"
+                    android:entries="@array/food_type" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp25"
+                android:layout_marginBottom="@dimen/dp10"
+                android:gravity="left"
+                android:padding="@dimen/dp10"
+                android:text="Taste*" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/spinner_background_5"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+                <TextView
+                    android:layout_width="@dimen/dp100"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:background="@drawable/btn_background_white"
+                    android:drawableEnd="@drawable/ic_close_black_24dp"
+                    android:drawableTint="@color/redColor"
+                    android:gravity="center"
+                    android:text="Spicy" />
+
+                <TextView
+                    android:layout_width="@dimen/dp100"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:background="@drawable/btn_background_white"
+                    android:drawableEnd="@drawable/ic_close_black_24dp"
+                    android:drawableTint="@color/redColor"
+                    android:gravity="center"
+                    android:text="Sweet" />
+
+                <TextView
+                    android:layout_width="@dimen/dp100"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:background="@drawable/btn_background_white"
+                    android:drawableEnd="@drawable/ic_close_black_24dp"
+                    android:drawableTint="@color/redColor"
+                    android:gravity="center"
+                    android:text="Sour" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Organic *" />
+
+                <Spinner
+                    style="@style/mySpinnerItemStyle2"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/spinner_background_5"
+                    android:entries="@array/organic" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Pack of *" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/btn_round_shape_green"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.6"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:hint="0"
+                        android:inputType="numberDecimal" />
+
+                    <Spinner
+                        style="@style/mySpinnerItemStyle3"
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:background="@drawable/spinner_background_6"
+                        android:entries="@array/grams" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:padding="@dimen/dp10"
+                    android:text="Max Shelf Life*" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/btn_round_shape_green"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.6"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:hint="0"
+                        android:inputType="numberDecimal" />
+
+                    <Spinner
+                        style="@style/mySpinnerItemStyle3"
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:background="@drawable/spinner_background_6"
+                        android:entries="@array/shelf" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

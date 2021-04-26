@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/dp5">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/dimension_05dp"
+        android:paddingRight="@dimen/dimension_05dp"
+        >
+
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textsize_16sp"
+            android:layout_marginTop="@dimen/dimension_16dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Varients"
+            />
+
+        <TextView
+            android:id="@+id/add_varients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textsize_14sp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:padding="@dimen/dimension_05dp"
+            android:background="@drawable/bg_btn_rectngle"
+            android:layout_alignParentRight="true"
+            android:text="Add varients"
+            />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_varients"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimension_250dp"
+        android:layout_marginTop="@dimen/dimension_16dp"
+        android:background="@drawable/bg_itemview1"
+        android:nestedScrollingEnabled="false" />
+
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/navigation_menu_listing"
+            android:icon="@drawable/ic_baseline_menu"
+            android:title="Menu Listing" />
+
+        <item
+            android:id="@+id/navigation_orders"
+            android:icon="@drawable/ic_user_filled"
+            android:title="My Profile" />
+       <!-- <item
+            android:id="@+id/navigation_orders"
+            android:icon="@drawable/ic_order"
+            android:title="Orders" />
+        <item
+            android:id="@+id/navigation_payouts"
+            android:icon="@drawable/credit_card"
+            android:title="My Payouts" />
+        <item
+            android:id="@+id/navigation_store"
+            android:icon="@drawable/information"
+            android:title="Product" />
+        <item
+            android:id="@+id/navigation_report"
+            android:icon="@drawable/information"
+            android:title="Reports" />
+        <item
+            android:id="@+id/navigation_product"
+            android:icon="@drawable/information"
+            android:title="Product Ratings" />
+        <item
+            android:id="@+id/navigation_reviews"
+            android:icon="@drawable/information"
+            android:title="Mom Reviews" />
+        <item
+            android:id="@+id/navigation_setting"
+            android:icon="@drawable/information"
+            android:title="My Settings" />-->
+    </group>
+    <group
+        android:id="@+id/menu_down"
+        android:checkableBehavior="single">
+       <!-- <item
+            android:id="@+id/navigation_notification"
+            android:icon="@drawable/notification"
+            android:title="Notifications" />-->
+        <item
+            android:id="@+id/navigation_password"
+            android:icon="@drawable/ic_baseline_password"
+            android:title="Change Password" />
+        <item
+            android:id="@+id/navigation_login"
+            android:icon="@drawable/ic_baseline_stop_circle_24"
+            android:title="Logout" />
+    </group>
+</menu>

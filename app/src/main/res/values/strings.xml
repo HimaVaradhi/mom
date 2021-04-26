@@ -1,0 +1,96 @@
+<resources>
+    <array name="country_name">
+        <item>Nationality*</item>
+    </array>
+    <array name="id_proof">
+        <item>Aadhar Number</item>
+    </array>
+    <array name="payment_mode">
+        <item>Paytm</item>
+    </array>
+    <array name="business">
+        <item>Home Chef</item>
+    </array>
+    <array name="platform">
+        <item>Others</item>
+    </array>
+    <array name="lisitng">
+        <item>ACTIVE</item>
+    </array>
+    <array name="fulfilled">
+        <item>AmruthaShala</item>
+    </array>
+    <array name="procurment">
+        <item>In Stock</item>
+    </array>
+    <array name="stocks">
+        <item>Pcs.</item>
+    </array>
+    <array name="sub_catagory">
+        <item>Cookies</item>
+    </array>
+    <array name="consumpation_type">
+        <item>Instant</item>
+    </array>
+    <array name="gst">
+        <item>18 % GST</item>
+    </array>
+    <array name="product_type">
+        <item>mom</item>
+    </array>
+    <array name="country">
+        <item>India</item>
+    </array>
+    <array name="shelf">
+        <item>Days</item>
+    </array>
+    <array name="grams">
+        <item>Gms</item>
+    </array>
+
+    <array name="container_type">
+        <item>Paper Box</item>
+    </array>
+
+    <array name="food_type">
+        <item>Vegetarian</item>
+        <item>Non Vegetarian</item>
+    </array>
+
+    <array name="organic">
+        <item>True</item>
+        <item>False</item>
+    </array>
+
+    <array name="currency">
+        <item>EAN</item>
+    </array>
+
+    <array name="menu_catagory">
+        <item>Main course</item>
+    </array>
+
+    <array name="order_status">
+        <item>Ready to ship</item>
+        <item>Preparing</item>
+        <item>In Production</item>
+        <item>Complete</item>
+    </array>
+
+    <string name="app_name">MomApp</string>
+
+    <string name="iso_22000_certified">"ISO 22000 CERTIFIED"</string>
+    <string name="password">PASSWORD</string>
+    <string name="otp">OTP</string>
+
+    <string name="enter_mobile_number_email_id">Enter Mobile Number</string>
+    <string name="welcome_to_amruthashala_mums">Welcome to Amruthashala Mums</string>
+    <string name="baker">Baker &amp; Selling Cookies &amp; Baked Products</string>
+    <string name="character">\u0040</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="sign_up">Apply SignUp</string>
+    <string name="strDashBoard">Dashboard</string>
+    <string name="Rs">\u20B9</string>
+    <string name="terms_of_service">By continuing, you agree to Amruthashala\nTerms of Service,Privacy Policy, Content Policy</string>
+</resources>

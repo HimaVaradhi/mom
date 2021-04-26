@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/dp5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_itemview1">
+
+        <Spinner
+            android:id="@+id/sp_catagory"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:dropDownWidth="match_parent"
+            android:layout_marginRight="@dimen/dimension_10dp"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/bg_set_spinner"/>
+
+        <Spinner
+            android:id="@+id/sp_sub_catagory"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:dropDownWidth="match_parent"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/bg_set_spinner" />
+
+
+    </LinearLayout>
+
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_itemview1">
+
+         <Spinner
+             android:id="@+id/sp_brand"
+             android:layout_width="0dp"
+             android:layout_weight="1"
+             android:layout_height="match_parent"
+             android:dropDownWidth="match_parent"
+             android:layout_marginRight="@dimen/dimension_10dp"
+             android:spinnerMode="dropdown"
+             android:background="@drawable/bg_set_spinner" />
+
+         <Spinner
+             android:id="@+id/sp_type"
+             android:layout_width="0dp"
+             android:layout_weight="1"
+             android:layout_height="match_parent"
+             android:dropDownWidth="match_parent"
+             android:spinnerMode="dropdown"
+             android:background="@drawable/bg_set_spinner" />
+
+     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_15sp"
+                android:id="@+id/edt_productname"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_edit_setproduct"
+                android:layout_marginTop="@dimen/dimension_10dp"
+                android:hint="Product Name"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp150"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_15sp"
+                android:id="@+id/edt_desc"
+                android:background="@drawable/bg_edit_setproduct"
+                android:layout_marginTop="@dimen/dimension_10dp"
+                android:padding="@dimen/dimension_10dp"
+                android:hint="Description"
+                android:gravity="top"
+                android:inputType="textMultiLine"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_15sp"
+                android:id="@+id/edt_vurl"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_edit_setproduct"
+                android:layout_marginTop="@dimen/dimension_10dp"
+                android:hint="Product Video Url"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_weight="0.5"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_15sp"
+                    android:id="@+id/edt_localc"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_edit_setproduct"
+                    android:layout_marginTop="@dimen/dimension_10dp"
+                    android:hint="Local Charges"
+                    />
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_weight="0.5"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_15sp"
+                    android:id="@+id/edt_zonalcharges"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_edit_setproduct"
+                    android:layout_marginTop="@dimen/dimension_10dp"
+                    android:layout_marginLeft="@dimen/dimension_10dp"
+                    android:hint="Zonal Charges"
+                    />
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_15sp"
+                android:id="@+id/edt_ncharges"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_edit_setproduct"
+                android:layout_marginTop="@dimen/dimension_10dp"
+                android:hint="National Charges"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
+        android:layout_width="@dimen/dimension_400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+
+        android:layout_marginBottom="@dimen/dimension_05dp"
+        app:lineSpacing="@dimen/dimension_1dp"
+        />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/sub_cat_names"
+        android:layout_width="@dimen/dimension_400dp"
+        android:layout_height="@dimen/dimension_50dp"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textsize_15sp"
+        android:hint="ex: Pickles"
+        android:background="@drawable/bg_edit_setproduct"
+        android:layout_marginTop="@dimen/dimension_10dp"
+        android:inputType="textCapWords"
+        android:gravity="center_vertical"
+        />
+   <!-- <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textsize_15sp"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_edit_setproduct"
+        android:layout_marginTop="@dimen/dimension_10dp"
+        android:hint="Search Key Words"
+        />
+-->
+</LinearLayout>
