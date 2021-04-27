@@ -88,8 +88,8 @@ public class PersonalFragment extends Fragment implements PersonalFragmentViewLi
     EditText etMobileNumber;
     @BindView(R.id.et_email)
     EditText etEmail;
-    @BindView(R.id.spinner_nation)
-    Spinner spNation;
+    @BindView(R.id.et_nationality)
+    EditText etNationality;
     @BindView(R.id.txt_male)
     TextView txtMale;
     @BindView(R.id.txt_female)
@@ -264,7 +264,7 @@ public class PersonalFragment extends Fragment implements PersonalFragmentViewLi
             strdob=etDOB.getText().toString();
             strmobileno=etMobileNumber.getText().toString();
             stremail=etEmail.getText().toString();
-            strnationality=spNation.getSelectedItem().toString();
+            strnationality=etNationality.getText().toString();
             Constant.FullName=strfullname;
             Constant.FatherName=strfathername;
             Constant.DOB=strdob;
@@ -273,6 +273,7 @@ public class PersonalFragment extends Fragment implements PersonalFragmentViewLi
             Constant.Gender=strGender;
             Constant.Nationality=strnationality;
             Log.e("applidetails", "applidetails: "+Constant.FullName+Constant.FatherName+Constant.DOB+Constant.MobileNumber+Constant.Email+Constant.Gender);
+            Toast.makeText(getActivity(), "Personal Details Saved", Toast.LENGTH_SHORT).show();
         }
     }
     @Override

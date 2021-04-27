@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
@@ -32,10 +34,13 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import in.amruthashala.momapp.BuildConfig;
 import in.amruthashala.momapp.Interfaces.CommonClick;
 import in.amruthashala.momapp.R;
 import in.amruthashala.momapp.common.CommonDialog;
@@ -46,13 +51,19 @@ import in.amruthashala.momapp.common.PermissionCheck;
 import in.amruthashala.momapp.common.RequestCodes;
 import in.amruthashala.momapp.retrofit.APIService;
 import in.amruthashala.momapp.retrofit.ApiUtils;
+import in.amruthashala.momapp.retrofit.MyDocResponse;
 import in.amruthashala.momapp.screens.CreateProduct;
+import in.amruthashala.momapp.screens.DashBoard;
+import in.amruthashala.momapp.screens.Login;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static android.app.Activity.RESULT_OK;
+
 public class DocumentFragment extends Fragment implements CommonClick {
     PermissionCheck permissionCheck;
     CommonDialog commonDialog;
@@ -122,7 +133,7 @@ public class DocumentFragment extends Fragment implements CommonClick {
     boolean isPanClicked = false, isAadharClicked = false, isGstClicked = false, isFssaiClicked = false, isOtherClicked = false;
     boolean isPan1Clicked = false, isPan2Cliked = false, isAadhar1Clicked = false, isAadhar2Clicked = false, isFssai1Clicked = false, isFssai2Cliked = false, isGst1Clicked = false, isGst2Clicked = false, isOther1Clicked = false, isOther2Clicked = false;
     private File mPhotoFile;
-APIService apiService=ApiUtils.getAPIService();
+APIService apiService;
     FileCompressor mCompressor;
     String imagecase = "A";
     private File fileProfile,fileProfile1, fileAadhar, filegst, filefoodlicense, fileothers;
@@ -134,7 +145,7 @@ APIService apiService=ApiUtils.getAPIService();
         permissionCheck = new PermissionCheck();
         commonDialog = new CommonDialog();
         mCompressor = new FileCompressor(getActivity());
-        //apiService = ApiUtils.getAPIService();
+       apiService = ApiUtils.getAPIService(getActivity());
         liPanDoneLayout.setVisibility(View.GONE);
         liAadharDoneLayout.setVisibility(View.GONE);
         llDoneFssai.setVisibility(View.GONE);
@@ -150,8 +161,27 @@ APIService apiService=ApiUtils.getAPIService();
     public void commonClick(int code) {
         switch (code) {
             case RequestCodes.CAMERA:
-                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cameraIntent, RequestCodes.CAMERA);
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    // Create the File where the photo should go
+                    File photoFile = null;
+                    try {
+                        photoFile = createImageFile();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                        // Error occurred while creating the File
+                    }
+                    if (photoFile != null) {
+                        Uri photoURI = FileProvider.getUriForFile(getActivity(),
+                                BuildConfig.APPLICATION_ID + ".provider",
+                                photoFile);
+
+                        mPhotoFile = photoFile;
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                        startActivityForResult(takePictureIntent, Constant.FROM_CAMERA);
+
+                    }
+                }
                 break;
             case RequestCodes.STORAGE:
                 /*Intent intent = new Intent(Intent.ACTION_PICK,
@@ -199,17 +229,16 @@ APIService apiService=ApiUtils.getAPIService();
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         try {
+            if (requestCode == Constant.FROM_CAMERA && resultCode == RESULT_OK) {
+                try {
+
+                    mPhotoFile = mCompressor.compressToFile(mPhotoFile);
+                    setImage(mPhotoFile);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
             switch (requestCode) {
-                case RequestCodes.CAMERA:
-                   /* Bitmap photo = (Bitmap) data.getExtras().get("data");
-                    setImage(photo);*/
-                    try {
-                        mPhotoFile = mCompressor.compressToFile(mPhotoFile);
-                        setImage(mPhotoFile);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    break;
                 case RequestCodes.STORAGE:
                     Uri selectedImage = data.getData();
                     try {
@@ -218,10 +247,6 @@ APIService apiService=ApiUtils.getAPIService();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                  /*  Uri selectedUri = data.getData();
-                    String filepath = FilePath.getPath(getActivity(), selectedUri);
-                    Bitmap bitmap = BitmapFactory.decodeFile(filepath);
-                    setImage(bitmap);*/
                     break;
             }
         } catch (Exception e) {
@@ -620,43 +645,41 @@ APIService apiService=ApiUtils.getAPIService();
         }
     }
 
-    @OnClick({R.id.linear_done_pan,R.id.img_done_pan})
+    @OnClick({R.id.linear_pan_layout})
     public void panDone(){
         if(etPan.getText().toString().isEmpty()){
             etPan.setError("Please enter PAN number");
         }
     }
 
-    @OnClick({R.id.linear_done_aadhar,R.id.img_done_aadhar})
+    @OnClick({R.id.linear_aadhar_layout})
     public void aadharDone(){
         if(etAadhar.getText().toString().isEmpty()){
             etAadhar.setError("Please enter your document number");
         }
     }
 
-    @OnClick({R.id.linear_done_fssai,R.id.img_done_fssai})
+    @OnClick({R.id.linear_fssai_layout})
     public void fssaiDone(){
         if(etFssai.getText().toString().isEmpty()){
             etFssai.setError("Please enter your FSSAI number");
         }
     }
 
-    @OnClick({R.id.linear_done_gst,R.id.img_done_gst})
+    @OnClick({R.id.linear_gst_layout})
     public void gstDone(){
         if(etGST.getText().toString().isEmpty()){
             etGST.setError("Please eneter your GST number");
         }
     }
-
-    @OnClick({R.id.linear_other_layout,R.id.img_done_other})
-    public void otherDone(){
-        if(etOther.getText().toString().isEmpty()){
-            etOther.setError("Please enter your Document number");
-        }
+    private File createImageFile() throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        String mFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File mFile = File.createTempFile(mFileName, ".jpg", storageDir);
+        return mFile;
     }
-
-
-
 
     public void setImage(File mPhotoFile) {
         if (isPanClicked) {
@@ -730,9 +753,6 @@ APIService apiService=ApiUtils.getAPIService();
             Glide.with(getActivity()).load(mPhotoFile).apply(new RequestOptions().placeholder(R.drawable.profile_pic_place_holder)).into(ivGst1);
 
             isGst1Clicked = false;
-            if (ivGst1.getDrawable() != null && ivGst2.getDrawable() != null) {
-                llDoneGst.setVisibility(View.GONE);
-            }
         } /*else if (isGst2Clicked) {
             ivGst2.setImageBitmap(bitmap);
             ivGst2.setBackground(null);
@@ -797,17 +817,20 @@ APIService apiService=ApiUtils.getAPIService();
             }
         }*/
     }
-  /////////////////
-
-   /* D/OkHttp: <-- HTTP FAILED: java.net.ProtocolException: HTTP 205 had non-zero Content-Length: 72
-    D/NativeCrypto: ssl=0x7336526f80 NativeCrypto_SSL_interrupt
-    D/fail123: FAILHTTP 205 had non-zero Content-Length: 72*/
-
     private void uploadPersonalData() {
+
+        String edtpan=etPan.getText().toString();
+        String aadharedt=etAadhar.getText().toString();
+        String fssaino=etFssai.getText().toString();
+        String gstnumber=etGST.getText().toString();
         MultipartBody.Builder builder = new MultipartBody.Builder();
         builder.setType(MultipartBody.FORM);
-      builder.addFormDataPart("mom_id",Constant.DOCUMENTID);
-    // builder.addFormDataPart("mom_id","9d40c445eda7db472e356741f2be00a9");
+      //builder.addFormDataPart("mom_id",Constant.DOCUMENTID);
+        builder.addFormDataPart("aadhar_card_number",aadharedt);
+        builder.addFormDataPart("fssai_number",fssaino);
+        builder.addFormDataPart("gst_number",gstnumber);
+        builder.addFormDataPart("pan_card_number",edtpan);
+        builder.addFormDataPart("mom_id","9d40c445eda7db472e356741f2be00a9");
        // File file = new File("/storage/emulated/0/Download/scan0003.jpg");
         if (fileProfile == null) {
 
@@ -850,45 +873,31 @@ APIService apiService=ApiUtils.getAPIService();
                     create(MediaType.parse("multipart/form-data"),fileothers));
 
         }
-      //  Log.e("PersonalFragment******", "PersonalFragmentfile: "+fileProfile.getName()+fileothers.getName()+fileProfile1.getName()+filefoodlicense.getName()+fileAadhar.getName()+filegst.getName());
-        MultipartBody requestBody = builder.build();
+          MultipartBody requestBody = builder.build();
         Log.d("requestBody", "requestBody"+requestBody);
-        apiService.uploaddocuments(requestBody).enqueue(new Callback<Object>() {
+        apiService.uploaddocuments(requestBody).enqueue(new Callback<MyDocResponse>() {
             @Override
-            public void onResponse(Call<Object> call,Response<Object> response) {
+            public void onResponse(Call<MyDocResponse> call,Response<MyDocResponse> response) {
 
                 Log.d("responseCode", response.code()+"");
                 if (response.isSuccessful()) {
-                    try {
-                        JSONObject object = new JSONObject(new Gson().toJson(response.body()));
-                        Log.d("responseCode", "hgvghvgv"+object);
-                        String status = object.getString("status");
-                        String messagestr = object.getString("message");
-                        Log.d("messagestr&&&", "hgvghvgv"+messagestr);
-                        Toast.makeText(getActivity(), "Uploaded Successfully", Toast.LENGTH_SHORT).show();
-                                } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+                    String message = response.body().getMessage();
+                    String status = response.body().getStatus();
+                    int statuscode=response.body().getStatuscode();
+                    Log.e("response", "response:"+message+status+statuscode);
+                    Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
                 } else {
                     try {
-                        JSONObject object = new JSONObject(response.errorBody().string());
-                        String message = object.getString("message");
-                        //
-                        Log.d("fail", message);
-                        if(message.contains("FAILHTTP 205 had non-zero Content-Length: 72")){
-                            Toast.makeText(getActivity(), "Uploaded Successfully", Toast.LENGTH_SHORT).show();
-                        }
+                        JSONObject jObjError = new JSONObject(response.errorBody().string());
+                        Toast.makeText(getActivity(), response.message(), Toast.LENGTH_LONG).show();
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
             }
             @Override
-            public void onFailure(@NonNull Call<Object> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<MyDocResponse> call, @NonNull Throwable t) {
                 Log.d("fail123", "FAIL"+t.getMessage());
-                if(t.getMessage().contains("FAILHTTP 205 had non-zero Content-Length: 72")){
-                    Toast.makeText(getActivity(), "Uploaded Successfully", Toast.LENGTH_SHORT).show();
-                }
             }
         });
     }

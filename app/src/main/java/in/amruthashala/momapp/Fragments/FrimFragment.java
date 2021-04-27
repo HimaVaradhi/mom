@@ -119,7 +119,7 @@ public class FrimFragment extends Fragment implements CommonClick {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.firm_sign_up, container, false);
         ButterKnife.bind(this, view);
-        apiService = ApiUtils.getAPIService();
+        apiService = ApiUtils.getAPIService(getActivity());
         permissionCheck = new PermissionCheck();
         commonDialog = new CommonDialog();
         tvYes.setBackground(getResources().getDrawable(R.drawable.background_border));

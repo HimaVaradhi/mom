@@ -82,6 +82,13 @@
     <string name="iso_22000_certified">"ISO 22000 CERTIFIED"</string>
     <string name="password">PASSWORD</string>
     <string name="otp">OTP</string>
+    <string name="email_valid">ABCDEFGHIJKLMNOPQRTUVWXYZSabcdefghijklmnopqrstuvwxyz  @.1234567890 " " _</string>
+    <string name="alphabetNumeric">ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</string>
+    <string name="alphabetNumeric3">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 \</string>
+
+    <string name="alphabetNumeric1">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 </string>
+    <string name="alphabetNumeric4">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 " " </string>
+    <string name="alphabetNumeric2">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#/ \ </string>
 
     <string name="enter_mobile_number_email_id">Enter Mobile Number</string>
     <string name="welcome_to_amruthashala_mums">Welcome to Amruthashala Mums</string>
@@ -89,7 +96,7 @@
     <string name="character">\u0040</string>
     <string name="open">open</string>
     <string name="close">close</string>
-    <string name="sign_up">Apply SignUp</string>
+    <string name="sign_up">SignUp</string>
     <string name="strDashBoard">Dashboard</string>
     <string name="Rs">\u20B9</string>
     <string name="terms_of_service">By continuing, you agree to Amruthashala\nTerms of Service,Privacy Policy, Content Policy</string>

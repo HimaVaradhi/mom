@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,12 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.net.CookieHandler;
-import java.net.CookieManager;
-import java.net.CookiePolicy;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -34,11 +28,8 @@ import in.amruthashala.momapp.Adapaters.MyProductsListingAdapater;
 import in.amruthashala.momapp.R;
 import in.amruthashala.momapp.common.BaseClass;
 import in.amruthashala.momapp.common.Constant;
-import in.amruthashala.momapp.common.DateConversions;
-import in.amruthashala.momapp.cookies.PersistentHttpCookieStore;
 import in.amruthashala.momapp.requestmodel.GetProductModel;
 import in.amruthashala.momapp.retrofit.APIService;
-import in.amruthashala.momapp.retrofit.ApiClient;
 import in.amruthashala.momapp.retrofit.ApiUtils;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -63,20 +54,14 @@ public class MyProducts extends BaseClass {
     LinearLayoutManager linearLayoutManager;
     APIService apiService;
     ArrayList<GetProductModel> productlist;
-    PersistentHttpCookieStore cookieStore;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        cookieStore = new PersistentHttpCookieStore(getApplicationContext());
-        CookieManager cookieManager = new CookieManager(cookieStore, CookiePolicy.ACCEPT_ALL);
-        CookieHandler.setDefault(cookieManager);
         super.onCreate(savedInstanceState);
-        apiService = ApiUtils.getAPIService();
+        apiService = ApiUtils.getAPIService(MyProducts.this);
         setSupportActionBar(tbToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("My Products");
-       // Toast.makeText(MyProducts.this, Constant.MOM_momuuid  + Constant.mom_TOKEN, Toast.LENGTH_SHORT).show();
-        productlist = new ArrayList<>();
-
+         productlist = new ArrayList<>();
         getproductlist();
 
     }
@@ -115,7 +100,7 @@ public class MyProducts extends BaseClass {
     }
 
     private void getproductlist() {
-        Log.d("mom_TOKEN","mom_TOKEN"+Constant.mom_TOKEN);
+        Log.d("mom_TOKEN","mom_TOKEN"+Constant.mom_TOKEN+Constant.MOM_momuuid);
         Call<Object> call = apiService.getproduct("Bearer "+Constant.mom_TOKEN,Constant.MOM_momuuid);
         call.enqueue(new Callback<Object>() {
             @Override

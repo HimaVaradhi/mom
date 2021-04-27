@@ -57,6 +57,7 @@ public interface APIService {
     Call<Object> getproduct(@Header("Authorization") String authorization,@Query("seller_id") String sellerid);
 
 
+
     @POST("api/v1/add_product_image")
     Call<Object> add_productimage(@Header("Authorization") String authorization,@Body RequestBody file);
 
@@ -67,7 +68,7 @@ public interface APIService {
 
 
     @PUT("api/v1/upload_documents")
-    Call<Object> uploaddocuments(@Body RequestBody file);
+    Call<MyDocResponse> uploaddocuments(@Body RequestBody file);
 }
 
 

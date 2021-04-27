@@ -60,8 +60,8 @@
                 android:background="@drawable/border_white_2"
                 android:ellipsize="end"
                 android:gravity="left"
+                android:maxLength="10"
                 android:hint="B D D K D 0 2 6 5 F"
-                android:maxLength="15"
                 android:maxLines="2"
                 android:padding="@dimen/dp10"
                 android:textColor="@color/black" />
@@ -123,7 +123,7 @@
                         android:id="@+id/img_done_pan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/upload"
+                        app:srcCompat="@drawable/ic_cloud_computing"
                         app:tint="@color/blueColor" />
                 </LinearLayout>
             </LinearLayout>
@@ -185,10 +185,10 @@
                 android:layout_weight="0.6"
                 android:background="@drawable/border_white_2"
                 android:ellipsize="end"
+                android:inputType="number"
+                android:maxLength="12"
                 android:gravity="left"
                 android:hint="0215  4564  4547"
-                android:inputType="phone"
-                android:maxLength="30"
                 android:maxLines="2"
                 android:padding="@dimen/dp10"
                 android:textColor="@color/black" />
@@ -249,7 +249,7 @@
                         android:id="@+id/img_done_aadhar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/upload"
+                        app:srcCompat="@drawable/ic_cloud_computing"
                         app:tint="@color/blueColor" />
                 </LinearLayout>
             </LinearLayout>
@@ -289,6 +289,8 @@
                 android:background="@drawable/border_white_2"
                 android:ellipsize="end"
                 android:gravity="left"
+                android:digits="@string/alphabetNumeric"
+                android:inputType="textCapCharacters"
                 android:maxLength="30"
                 android:maxLines="2"
                 android:padding="@dimen/dp10"
@@ -331,7 +333,7 @@
                         android:id="@+id/img_done_gst"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/upload"
+                        app:srcCompat="@drawable/ic_cloud_computing"
                         app:tint="@color/blueColor" />
                 </LinearLayout>
             </LinearLayout>
@@ -390,7 +392,8 @@
                 android:background="@drawable/border_white_2"
                 android:ellipsize="end"
                 android:gravity="left"
-                android:maxLength="30"
+                android:inputType="number"
+                android:maxLength="15"
                 android:maxLines="2"
                 android:padding="@dimen/dp10"
                 android:textColor="@color/black" />
@@ -432,7 +435,7 @@
                         android:id="@+id/img_done_fssai"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/upload"
+                        app:srcCompat="@drawable/ic_cloud_computing"
                         app:tint="@color/blueColor" />
                 </LinearLayout>
             </LinearLayout>
@@ -554,7 +557,7 @@
                         android:id="@+id/img_done_other"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/upload"
+                        app:srcCompat="@drawable/ic_cloud_computing"
                         app:tint="@color/blueColor" />
                 </LinearLayout>
             </LinearLayout>
@@ -581,7 +584,7 @@
                     android:layout_height="@dimen/dp50"
                     android:clickable="false"
                     android:focusable="false"
-                    android:src="@drawable/upload"
+                    android:src="@drawable/ic_cloud_computing"
                     app:tint="@color/blueColor" />
 
                 <TextView

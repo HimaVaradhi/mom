@@ -168,7 +168,7 @@ public class CreateProduct extends BaseClass implements CommonClick {
         setSupportActionBar(tbToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Create Product");
-        apiService = ApiUtils.getAPIService();
+        apiService = ApiUtils.getAPIService(CreateProduct.this);
         permissionCheck = new PermissionCheck();
         images = new ArrayList<>();
         productVariants = new ArrayList<>();
@@ -270,7 +270,12 @@ public class CreateProduct extends BaseClass implements CommonClick {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.done:
-                addNewProductToServer();
+                if(Constant.ProductID.isEmpty()){
+                    addNewProductToServer();
+                }else{
+                    uploadimage();
+                }
+
                break;
         }
         return true;
@@ -651,7 +656,7 @@ public class CreateProduct extends BaseClass implements CommonClick {
                         Uri uri = item.getUri();
                         Log.d("uriioewrwe", uri.toString() + "");
                         mArrayUri.add(uri);
-                        uploadimage();
+
                     }
                     Log.v("LOG_TAG", "Selected Images" + mArrayUri.size());
                     adapter.notifyDataSetChanged();
@@ -682,7 +687,7 @@ public class CreateProduct extends BaseClass implements CommonClick {
 
 
     private void addNewProductToServer() {
-
+        Toast.makeText(this, "hi", Toast.LENGTH_SHORT).show();
         JSONObject object = new JSONObject();
 
         JsonParser jsonParser = new JsonParser();
@@ -693,7 +698,7 @@ public class CreateProduct extends BaseClass implements CommonClick {
             object.put("product_name",edt_productname.getText().toString());
             object.put("product_type","true");
             object.put("product_description",edt_desc.getText().toString());
-        //    object.put("seller_id","3f779ca39bf478289b620ef3cc9f1905");
+            object.put("seller_id",Constant.MOM_momuuid);
             object.put("brand_id",sp_brandstr);
             object.put("video_url","http://amrutha.com");
             object.put("product_status","2");
@@ -765,7 +770,7 @@ public class CreateProduct extends BaseClass implements CommonClick {
 
         Log.d("dsdsdsd", gsonObject.toString());
         if (Constant.mom_TOKEN != null && gsonObject != null) {
-            apiService.addNewProduct("Bearer "+Constant.mom_TOKEN,gsonObject).enqueue(new Callback<Object>() {
+           /* apiService.addNewProduct("Bearer "+Constant.mom_TOKEN,gsonObject).enqueue(new Callback<Object>() {
                 @Override
                 public void onResponse(Call<Object> call, retrofit2.Response<Object> response) {
                     Log.d("sklheh",response.code()+" "+response.raw());
@@ -775,10 +780,10 @@ public class CreateProduct extends BaseClass implements CommonClick {
                             Log.d("responseCode", "hgvghvgv"+object);
                             String status = object.getString("status");
                             String data = object.getString("data");
-                            String messagestr = object.getString("message");
-                            Log.d("messagestr&&&", "hgvghvgv"+messagestr);
-                            Constant.ProductID=data;
-                            Toast.makeText(CreateProduct.this, "Successfully Added", Toast.LENGTH_SHORT).show();
+                            if (status.equalsIgnoreCase("success")) {
+                                Constant.ProductID=data;
+                                Toast.makeText(CreateProduct.this, "Product Added Successfully", Toast.LENGTH_SHORT).show();
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -787,16 +792,16 @@ public class CreateProduct extends BaseClass implements CommonClick {
                 public void onFailure(Call<Object> call, Throwable t) {
                     Toast.makeText(CreateProduct.this,t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-            });
+            });*/
         }
     }
 
     private void uploadimage() {
-
+        Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
     MultipartBody.Builder builderAadhar = new MultipartBody.Builder();
     builderAadhar.setType(MultipartBody.FORM);
 
-    builderAadhar.addFormDataPart("product_id", Constant.ProductID);
+    builderAadhar.addFormDataPart("product_id",Constant.ProductID);
 
 
     for (int i = 0; i < mArrayUri.size(); i++) {
@@ -819,7 +824,7 @@ public class CreateProduct extends BaseClass implements CommonClick {
     }
     MultipartBody requestBody = builderAadhar.build();
 
-    apiService.add_productimage("Bearer " + Constant.mom_TOKEN, requestBody).enqueue(new Callback<Object>() {
+    apiService.add_productimage("Bearer "+Constant.mom_TOKEN,requestBody).enqueue(new Callback<Object>() {
         @Override
         public void onResponse(Call<Object> call, Response<Object> response) {
             if (response.isSuccessful()) {
@@ -829,12 +834,9 @@ public class CreateProduct extends BaseClass implements CommonClick {
                     String message = object.getString("message");
                     Log.d("onSucess", object.toString());
 
-                    if (status.equalsIgnoreCase("Success")) {
+                    if (status.equalsIgnoreCase("success")) {
                         Log.d("Add_staff_success", response.code() + " " + message);
                         Toast.makeText(CreateProduct.this, "Product Added Successfully", Toast.LENGTH_SHORT).show();
-                        //  JSONObject jsonObject = object.getJSONObject("data");
-
-
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

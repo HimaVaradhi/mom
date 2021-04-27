@@ -398,7 +398,7 @@
                         android:id="@+id/img_done_pan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/upload"
+                        app:srcCompat="@drawable/ic_cloud_computing"
                         app:tint="@color/blueColor" />
                 </LinearLayout>
             </LinearLayout>
