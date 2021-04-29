@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp50"
             android:gravity="center"
+            android:textStyle="bold"
             android:text="Please select the suitable description \n of you"
             android:textSize="@dimen/sp20" />
 
@@ -336,6 +337,7 @@
                 android:background="@drawable/border_white_2"
                 android:ellipsize="end"
                 android:gravity="left"
+                android:inputType="number"
                 android:hint="Registration no*"
                 android:maxLines="2"
                 android:padding="@dimen/dp10"
@@ -349,6 +351,7 @@
                 android:layout_marginLeft="@dimen/dp5"
                 android:layout_marginTop="@dimen/dp10"
                 android:layout_weight="0.3"
+                android:visibility="gone"
                 android:background="@drawable/borderrectangle_green"
                 android:gravity="center">
 
@@ -357,6 +360,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:rotation="90"
+
                     app:srcCompat="@drawable/ic_attach_file"
                     app:tint="@color/white" />
             </LinearLayout>

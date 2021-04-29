@@ -1,5 +1,7 @@
 package in.amruthashala.momapp.screens;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -30,9 +32,7 @@ import in.amruthashala.momapp.retrofit.APIService;
 import in.amruthashala.momapp.retrofit.ApiUtils;
 import retrofit2.Call;
 import retrofit2.Callback;
-
 public class DashBoard extends BaseClass implements NavigationView.OnNavigationItemSelectedListener {
-
     @BindView(R.id.drawer_layout)
     DrawerLayout dlLayout;
     @BindView(R.id.nav_view)
@@ -50,6 +50,7 @@ public class DashBoard extends BaseClass implements NavigationView.OnNavigationI
     SharedPreferences shp;
     SharedPreferences.Editor shpEditor;
     APIService apiService;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +58,7 @@ public class DashBoard extends BaseClass implements NavigationView.OnNavigationI
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         apiService = ApiUtils.getAPIService(DashBoard.this);
+        progressDialog = new ProgressDialog(DashBoard.this);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, dlLayout, tbToolbar, R.string.open, R.string.close);
         actionBarDrawerToggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
         actionBarDrawerToggle.syncState();
@@ -64,8 +66,10 @@ public class DashBoard extends BaseClass implements NavigationView.OnNavigationI
         shp = getSharedPreferences("myPreferences", MODE_PRIVATE);
         String token    = shp.getString("token", "");
         String momid    = shp.getString("momidedt", "");
+        String mobilenumber    = shp.getString("mobile_number", "");
         Constant.mom_TOKEN = token;
         Constant.MOM_momuuid = momid;
+        Constant.MOBILE_NO = mobilenumber;
         CheckLogin();
         linearLayoutManager = new LinearLayoutManager(this);
         rcOrders.setLayoutManager(linearLayoutManager);
@@ -77,7 +81,7 @@ public class DashBoard extends BaseClass implements NavigationView.OnNavigationI
             shp = getSharedPreferences("myPreferences", MODE_PRIVATE);
         String Token = shp.getString("token", "");
         if (Token != null && !Token.equals("")) {
-            Toast.makeText(this, Token, Toast.LENGTH_SHORT).show();
+
         } else
         {
             Intent i = new Intent(DashBoard.this, Login.class);
@@ -96,50 +100,23 @@ public class DashBoard extends BaseClass implements NavigationView.OnNavigationI
             case R.id.navigation_menu_listing:
                 startActivity(new Intent(this, MyProducts.class));
                 break;
+            case R.id.navigation_orders:
+                startActivity(new Intent(this, ProfileActivity.class));
+                break;
             case R.id.navigation_login:
-                try {
-                    if (shp == null)
-                        shp = getSharedPreferences("myPreferences", MODE_PRIVATE);
-                    shpEditor = shp.edit();
-                    shpEditor.putString("token", "");
-                    shpEditor.commit();
-                    apiService.momlogout("Bearer "+Constant.mom_TOKEN).enqueue(new Callback<Object>() {
-                        @Override
-                        public void onResponse(Call<Object> call, retrofit2.Response<Object> response) {
-                            if (response.isSuccessful()) {
-                                try {
-                                    JSONObject object = new JSONObject(new Gson().toJson(response.body()));
-                                    Log.d("responseCode", "hgvghvgv"+object);
-                                    String status = object.getString("status");
-                                    String messagestr = object.getString("message");
-                                    Log.d("messagestr&&&", "hgvghvgv"+messagestr);
-                                    Toast.makeText(DashBoard.this, messagestr, Toast.LENGTH_SHORT).show();
-                                    Intent i = new Intent(DashBoard.this, Login.class);
-                                    startActivity(i);
-                                    finish();
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                            } else {
-                                try {
-                                    JSONObject jObjError = new JSONObject(response.errorBody().string());
-                                    Toast.makeText(DashBoard.this, response.message(), Toast.LENGTH_LONG).show();
-                                } catch (Exception e) {
-                                    Toast.makeText(DashBoard.this, e.getMessage(), Toast.LENGTH_LONG).show();
-                                }
-                            }
-                        }
-                        @Override
-                        public void onFailure(Call<Object> call, Throwable t) {
-                            Log.d("fail::::", "fail"+t.getMessage());
-                        }
-                    });
-                } catch (Exception ex) {
-                    Toast.makeText(DashBoard.this, ex.getMessage().toString(), Toast.LENGTH_LONG).show();
-                }
+                progressDialog.setMessage("Loging Out...");
+                progressDialog.show();
+                restartActivity(DashBoard.this);
                 break;
         }
         return false;
     }
+    private void restartActivity(Activity mActivity) {
+        shp.edit().clear().apply();
+        progressDialog.dismiss();
+        mActivity.recreate();
+
+    }
+
 }
 

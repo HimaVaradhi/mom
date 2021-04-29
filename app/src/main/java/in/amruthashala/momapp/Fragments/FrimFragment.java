@@ -46,6 +46,7 @@ import in.amruthashala.momapp.common.PermissionCheck;
 import in.amruthashala.momapp.common.RequestCodes;
 import in.amruthashala.momapp.retrofit.APIService;
 import in.amruthashala.momapp.retrofit.ApiUtils;
+import in.amruthashala.momapp.screens.CreateProduct;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -366,7 +367,6 @@ public class FrimFragment extends Fragment implements CommonClick {
         builder.setType(MultipartBody.FORM);
           builder.addFormDataPart("mom_profile_pic",PersonalFragment.fileProfile.getName(), RequestBody.
                 create(MediaType.parse("multipart/form-data"),PersonalFragment.fileProfile));
-
         Log.e("PersonalFragment******", "PersonalFragmentfile: "+PersonalFragment.fileProfile.getName());
         builder.addFormDataPart("full_name", Constant.FullName);
         builder.addFormDataPart("dob", Constant.DOB);
@@ -388,11 +388,13 @@ public class FrimFragment extends Fragment implements CommonClick {
                         JSONObject object = new JSONObject(new Gson().toJson(response.body()));
                         Log.d("responseCode", "hgvghvgv"+object);
                         String status = object.getString("status");
-
                         String messagestr = object.getString("message");
-                        Log.d("messagestr&&&", "hgvghvgv"+messagestr);
-                        Toast.makeText(getActivity(), "Applied Successfully", Toast.LENGTH_SHORT).show();
-                        Constant.DOCUMENTID=messagestr;
+                        if (status.equalsIgnoreCase("success")) {
+                            Toast.makeText(getActivity(), messagestr, Toast.LENGTH_SHORT).show();
+                            Constant.DOCUMENTID=messagestr;
+                        }else if(status.equalsIgnoreCase("error")){
+                            Toast.makeText(getActivity(), messagestr, Toast.LENGTH_SHORT).show();
+                        }
                           } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -413,66 +415,4 @@ public class FrimFragment extends Fragment implements CommonClick {
             }
         });
     }
-
-
-
-
-
-
-/*
-    *//*******************************personal data********************//*
-    private void uploadPersonalData() {
-        MultipartBody.Builder builder = new MultipartBody.Builder();
-        builder.setType(MultipartBody.FORM);
-        builder.addFormDataPart("pancard_front_image",fileProfile.getName(), RequestBody.
-                create(MediaType.parse("multipart/form-data"),PersonalFragment.fileProfile));
-        builder.addFormDataPart("address_proof",fileAadhar.getName(), RequestBody.
-                create(MediaType.parse("multipart/form-data"),fileAadhar));
-        builder.addFormDataPart("gst_proof",filegst.getName(), RequestBody.
-                create(MediaType.parse("multipart/form-data"),filegst));
-        builder.addFormDataPart("fssai_food_license",filefoodlicense.getName(), RequestBody.
-                create(MediaType.parse("multipart/form-data"),filefoodlicense));
-        builder.addFormDataPart("other_docs",fileothers.getName(), RequestBody.
-                create(MediaType.parse("multipart/form-data"),fileothers));
-        Log.e("PersonalFragment******", "PersonalFragmentfile: "+fileProfile.getName()+fileothers.getName());
-        builder.addFormDataPart("mom_id","a9a221694922cc179f745c2cd372a70e");
-        MultipartBody requestBody = builder.build();
-        Log.d("requestBody", "requestBody"+requestBody);
-        apiService.uploaddocuments(requestBody).enqueue(new Callback<Object>() {
-            @Override
-            public void onResponse(@NonNull Call<Object> call, @NonNull Response<Object> response) {
-                Log.d("responseCode", response.code()+"");
-                if (response.isSuccessful()) {
-                    try {
-                        JSONObject object = new JSONObject(new Gson().toJson(response.body()));
-                        Log.d("responseCode", "hgvghvgv"+object);
-                        String status = object.getString("status");
-
-                        String messagestr = object.getString("message");
-                        Log.d("messagestr&&&", "hgvghvgv"+messagestr);
-
-                        Constant.DOCUMENTID=messagestr;
-                        //{"message":"a9a221694922cc179f745c2cd372a70e","status":"success","status code":201}
-                        //Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYxODgyNzk0OCwianRpIjoiNWQwY2UyYTEtZGUwZi00MGIwLWFkM2YtMDEzOTMxMmJjMzU5IiwibmJmIjoxNjE4ODI3OTQ4LCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiM2Y3NzljYTM5YmY0NzgyODliNjIwZWYzY2M5ZjE5MDUiLCJleHAiOjE2MjE0MTk5NDh9.ILSm9JH-3_EE9Ad1DwrVdHhV_OpYVvHljGiYWzoqRZs
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                } else {
-                    try {
-                        JSONObject object = new JSONObject(response.errorBody().string());
-                        String message = object.getString("message");
-                        //
-                        Log.d("fail", message);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-            @Override
-            public void onFailure(@NonNull Call<Object> call, @NonNull Throwable t) {
-                Log.d("fail123", "FAIL"+t.getMessage());
-            }
-        });
-    }*/
-
 }

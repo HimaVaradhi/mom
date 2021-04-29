@@ -60,6 +60,8 @@
                 android:background="@drawable/border_white_2"
                 android:ellipsize="end"
                 android:gravity="left"
+                android:digits="@string/alphabetNumeric"
+                android:inputType="textCapCharacters"
                 android:maxLength="10"
                 android:hint="B D D K D 0 2 6 5 F"
                 android:maxLines="2"

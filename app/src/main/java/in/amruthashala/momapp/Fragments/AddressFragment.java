@@ -12,8 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -72,6 +74,7 @@ public class AddressFragment extends Fragment implements CommonClick {
     @BindView(R.id.txt_residence)
     TextView txtResidence;
     EditText etDoorNo, etStreetName, etLocality, etLandMark, etCity, etPin, etState, etCountry;
+    ImageView ivclose;
     @BindView(R.id.ll_save_layout)
     LinearLayout ll_save_layout;
     ArrayList<AddressList> addressLists;
@@ -87,6 +90,7 @@ public class AddressFragment extends Fragment implements CommonClick {
         } else {
             location = new LocationTracker(getActivity());
             addresses = location.getAddress();
+            Log.d("addresses",addresses.toString());
         }
         addressLists = new ArrayList<>();
         ll_save_layout.setOnClickListener(new View.OnClickListener() {
@@ -95,10 +99,6 @@ public class AddressFragment extends Fragment implements CommonClick {
                 saveaddress();
             }
         });
-
-
-
-
         return view;
     }
 
@@ -149,6 +149,7 @@ public class AddressFragment extends Fragment implements CommonClick {
         etPin = dialog.findViewById(R.id.et_pin);
         etState = dialog.findViewById(R.id.et_state);
         etCountry = dialog.findViewById(R.id.et_country);
+        ivclose = dialog.findViewById(R.id.iv_close);
         llLoaction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -158,9 +159,9 @@ public class AddressFragment extends Fragment implements CommonClick {
                     try {
                         location = new LocationTracker(getActivity());
                         addresses = location.getAddress();
-                        etStreetName.setText(addresses.get(0).getSubThoroughfare() != null ? addresses.get(0).getSubThoroughfare() : "");
+                        etStreetName.setText(addresses.get(0).getFeatureName() != null ? addresses.get(0).getFeatureName() : "");
                         etLocality.setText(addresses.get(0).getLocality() != null ? addresses.get(0).getLocality() : "");
-                        etLandMark.setText(addresses.get(0).getFeatureName() != null ? addresses.get(0).getFeatureName() : "");
+                        etLandMark.setText(addresses.get(0).getAddressLine(0) != null ? addresses.get(0).getAddressLine(0) : "");
                         etCity.setText(addresses.get(0).getLocality() != null ? addresses.get(0).getLocality() : "");
                         etPin.setText(addresses.get(0).getPostalCode() != null ? addresses.get(0).getPostalCode() : "");
                         etState.setText(addresses.get(0).getAdminArea() != null ? addresses.get(0).getAdminArea() : "");
@@ -252,6 +253,12 @@ public class AddressFragment extends Fragment implements CommonClick {
             }
         });
         dialog.show();
+        ivclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
     }
     public void saveaddress() {
         JSONObject jsonObject = new JSONObject();
@@ -283,10 +290,9 @@ public class AddressFragment extends Fragment implements CommonClick {
         }
 
         Log.d("dsdsdsd", jsonObject1.toString());
-        Constant.Addressobject=jsonObject1.toString();//applidetails: himahimabindhu19-04-20219866568698hima1234@gmail.comFemale
-        //2021-04-19 15:06:07.045 31831-31831/in.amruthashala.momapp D/dsdsdsd: {"1":{"name":"","address":"btm layout","landmark":"Nandhini parlour","state":"karnataka","city":"karnataka","latitude":"","longitude":"","pincode":"560098","alternate_mobile_number":""}}
-    }// E/payapplidetails: payapplidetails: {"bank_account_details":{"account_holder_name":"Sharat kumar","account_no":"56565656563","ifsc_code":"IFSC76677","bank_name":"Syndicate Bank","branch_name":"banglore"},"other_account":{"account_type":"Savings","mobile_number":"9859868685"}}
-    //payapplidetails:{"running_business":"Home_Chef","registed_business":"No","registration_no":"47859","available_in_any_platform":"Yes","paltform_type":"Online","platfrom_name":"restaurants","profile_link":"https:\/\/www.zomato.com\/bangalore"}
+        Toast.makeText(getActivity(), "Address details saved", Toast.LENGTH_SHORT).show();
+        Constant.Addressobject=jsonObject1.toString();
+    }
     @Override
     public void commonClick(int code) {
 

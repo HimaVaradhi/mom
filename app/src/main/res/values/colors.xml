@@ -10,7 +10,7 @@
     <color name="colorPrimary">#3AB54A</color>
     <color name="colorPrimaryDark">#4CAF50</color>
     <color name="colorAccent">#CF1B48</color>
-    ​
+    ​<color name="loginBkColor">#f0f0f0</color>
     <color name="lightGreen">#F9FFF1</color>
     <color name="textColorDark">#707070</color>
     <color name="charcoalblack">#36454f</color>

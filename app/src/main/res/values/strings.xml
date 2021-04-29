@@ -85,7 +85,12 @@
     <string name="email_valid">ABCDEFGHIJKLMNOPQRTUVWXYZSabcdefghijklmnopqrstuvwxyz  @.1234567890 " " _</string>
     <string name="alphabetNumeric">ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</string>
     <string name="alphabetNumeric3">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 \</string>
-
+    <string name="profile_continue">Login To Continue</string>
+    <string name="profile_login">Please login to add items in your cart.</string>
+    <string name="profile_customer">Customer Name</string>
+    <string name="Account">Account</string>
+    <string name="Notification">Notification</string>
+    <string name="Notification_a">Allow Notification</string>
     <string name="alphabetNumeric1">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 </string>
     <string name="alphabetNumeric4">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 " " </string>
     <string name="alphabetNumeric2">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#/ \ </string>

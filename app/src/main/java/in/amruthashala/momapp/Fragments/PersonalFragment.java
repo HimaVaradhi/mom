@@ -251,13 +251,8 @@ public class PersonalFragment extends Fragment implements PersonalFragmentViewLi
             scView.scrollTo(0,0);
         }else if(etMobileNumber.getText().toString().isEmpty()){
             etMobileNumber.setError("Please enter Mobile number");
-        }else if(etEmail.getText().toString().isEmpty()){
-            etEmail.setError("Please enter Email");
         }else if(strGender.isEmpty()){
             Toast.makeText(getActivity(),"Please Select Gender",Toast.LENGTH_LONG).show();
-        }else if(ciProfilePicture.getDrawable()==null){
-            Toast.makeText(getActivity(),"Please Uplode Profile picture",Toast.LENGTH_LONG).show();
-            scView.scrollTo(0,0);
         }else{
             strfullname=etFullName.getText().toString();
             strfathername=etFatherName.getText().toString();
@@ -418,8 +413,6 @@ public class PersonalFragment extends Fragment implements PersonalFragmentViewLi
         }
 
     }
-
-
     public String getRealPathFromUri(Uri contentUri) {
         Cursor cursor = null;
         try {

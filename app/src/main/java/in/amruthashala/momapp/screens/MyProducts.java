@@ -1,5 +1,6 @@
 package in.amruthashala.momapp.screens;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -100,13 +101,15 @@ public class MyProducts extends BaseClass {
     }
 
     private void getproductlist() {
+        ProgressDialog progressDialog = new ProgressDialog(MyProducts.this);
+        progressDialog.show();
         Log.d("mom_TOKEN","mom_TOKEN"+Constant.mom_TOKEN+Constant.MOM_momuuid);
         Call<Object> call = apiService.getproduct("Bearer "+Constant.mom_TOKEN,Constant.MOM_momuuid);
         call.enqueue(new Callback<Object>() {
             @Override
             public void onResponse(Call<Object> call, Response<Object> response) {
                 Log.d("sklheh",response.code()+" "+response.raw());
-
+                progressDialog.dismiss();
                 try {
                     Log.e("TAG", "onResponse: "+response.message() );
                     JSONObject object=new JSONObject(new Gson().toJson(response.body()));
@@ -158,6 +161,7 @@ public class MyProducts extends BaseClass {
             @Override
             public void onFailure(Call<Object> call, Throwable t) {
                 Log.d("order_api_fail", t.getMessage());
+                progressDialog.dismiss();
             }
         });
     }

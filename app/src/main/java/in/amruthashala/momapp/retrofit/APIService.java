@@ -23,8 +23,6 @@ import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
-
-
 /**
  * Created by varadhi on 10/3/18.
  */
@@ -40,6 +38,26 @@ public interface APIService {
     @GET("api/v1/refresh_token")
     Call<Object> refreshtoken(@Header("Authorization") String authorization);
 
+
+    @GET("api/v1/get_mom_details")
+    Call<Object> get_mom_profile(@Header("Authorization") String authorization, @QueryMap Map<String, String> options);
+
+
+    @PUT("api/v1/update_mom_details")
+    Call<Object> update_mom_profile(@Header("Authorization") String authorization,@Body JsonObject rawJson);
+
+    @POST("api/v1/change_password")
+    Call<Object> changePassword(
+            @Header("Authorization") String token,
+            @Body Map<String,String> map
+    );
+
+    @POST("api/v1/mom_forgot_password")
+    Call<Object> forgot_password(@Body Map<String, String> body);
+
+
+    @POST("api/v1/mom_login_with_otp")
+    Call<Object> mom_login_with_otp(@Body Map<String, String> body);
 
 
     @Headers("Content-Type: application/json")

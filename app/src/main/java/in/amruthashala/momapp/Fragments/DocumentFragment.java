@@ -846,7 +846,7 @@ APIService apiService;
                     create(MediaType.parse("multipart/form-data"),fileProfile1));
         }
 
-        if (fileAadhar== null) {
+        if (fileAadhar == null) {
 
         } else {
             builder.addFormDataPart("address_proof",fileAadhar.getName(), RequestBody.
@@ -873,7 +873,8 @@ APIService apiService;
                     create(MediaType.parse("multipart/form-data"),fileothers));
 
         }
-          MultipartBody requestBody = builder.build();
+    Log.e("PersonalFragment******", "PersonalFragmentfile: "+fileProfile.getName()+fileothers.getName()+fileProfile1.getName()+filefoodlicense.getName()+fileAadhar.getName()+filegst.getName());
+        MultipartBody requestBody = builder.build();
         Log.d("requestBody", "requestBody"+requestBody);
         apiService.uploaddocuments(requestBody).enqueue(new Callback<MyDocResponse>() {
             @Override

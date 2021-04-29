@@ -269,6 +269,9 @@ public class CreateProduct extends BaseClass implements CommonClick {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
             case R.id.done:
                 if(Constant.ProductID.isEmpty()){
                     addNewProductToServer();
@@ -300,6 +303,70 @@ public class CreateProduct extends BaseClass implements CommonClick {
         tv3.setBackground(getResources().getDrawable(R.drawable.circle_disabled));
         tv4.setBackground(getResources().getDrawable(R.drawable.circle_disabled));
         View view = View.inflate(CreateProduct.this, R.layout.add_product_one, null);
+        ArrayList<String> catarray = new ArrayList<>();
+        catarray.add("ed7b1226a487b0aff3e96b7ce9ec78ba");
+        catarray.add("ed1fdf27e74baf61490a5c3b2d79be63");
+        catarray.add("dee31ee251660480c8526a8cc7755a0b");
+        CustomSpinnerAdapter Productwtspnad  =new CustomSpinnerAdapter(this, catarray,"White");
+        sp_catagory.setAdapter(Productwtspnad);
+        sp_catagory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // qualification_mother = parent.getItemAtPosition(position).toString();
+                sp_catagorystr = parent.getItemAtPosition(position).toString();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        ArrayList<String> sp_typearray = new ArrayList<>();
+        sp_typearray.add("mom");
+        CustomSpinnerAdapter sp_typearrayad  =new CustomSpinnerAdapter(this, sp_typearray,"White");
+        sp_type.setAdapter(sp_typearrayad);
+        sp_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // qualification_mother = parent.getItemAtPosition(position).toString();
+                sp_typestr = parent.getItemAtPosition(position).toString();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        ArrayList<String> sp_brandarray = new ArrayList<>();
+        sp_brandarray.add("606d92d527d3b8df3aa72bcd");
+        CustomSpinnerAdapter sp_brandad  =new CustomSpinnerAdapter(this, sp_brandarray,"White");
+        sp_brand.setAdapter(sp_brandad);
+        sp_brand.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // qualification_mother = parent.getItemAtPosition(position).toString();
+                sp_brandstr = parent.getItemAtPosition(position).toString();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        ArrayList<String> subcatarray = new ArrayList<>();
+        subcatarray.add("bbc74f4284bd82092948da4c658c5bee");
+        subcatarray.add("b1e473cb3099aa284c8dd9d7f9e7bf42");
+        subcatarray.add("8eed9d1e31b097be167e4df8d686ba5f");
+        CustomSpinnerAdapter subada  =new CustomSpinnerAdapter(CreateProduct.this,subcatarray,"White");
+        sp_sub_catagory.setAdapter(subada);
+        sp_sub_catagory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // qualification_mother = parent.getItemAtPosition(position).toString();
+                sp_sub_catagorystr = parent.getItemAtPosition(position).toString();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         llContainer.removeAllViews();
         llContainer.addView(view);
     }
@@ -687,7 +754,6 @@ public class CreateProduct extends BaseClass implements CommonClick {
 
 
     private void addNewProductToServer() {
-        Toast.makeText(this, "hi", Toast.LENGTH_SHORT).show();
         JSONObject object = new JSONObject();
 
         JsonParser jsonParser = new JsonParser();
@@ -770,7 +836,7 @@ public class CreateProduct extends BaseClass implements CommonClick {
 
         Log.d("dsdsdsd", gsonObject.toString());
         if (Constant.mom_TOKEN != null && gsonObject != null) {
-           /* apiService.addNewProduct("Bearer "+Constant.mom_TOKEN,gsonObject).enqueue(new Callback<Object>() {
+         apiService.addNewProduct("Bearer "+Constant.mom_TOKEN,gsonObject).enqueue(new Callback<Object>() {
                 @Override
                 public void onResponse(Call<Object> call, retrofit2.Response<Object> response) {
                     Log.d("sklheh",response.code()+" "+response.raw());
@@ -792,7 +858,7 @@ public class CreateProduct extends BaseClass implements CommonClick {
                 public void onFailure(Call<Object> call, Throwable t) {
                     Toast.makeText(CreateProduct.this,t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-            });*/
+            });
         }
     }
 

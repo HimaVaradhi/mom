@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -143,7 +144,7 @@ public class PaymentFragment extends Fragment{
                 }
 
             Constant.PaymentObject=jsonObject.toString();
-
+            Toast.makeText(getActivity(), "Payment details saved", Toast.LENGTH_SHORT).show();
             Log.e("payapplidetails", "payapplidetails: "+Constant.PaymentObject);
 
 
